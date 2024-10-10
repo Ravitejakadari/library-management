@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Account</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            width: 350px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .form-control {
+            border-radius: 20px;
+        }
+        .btn-primary {
+            border-radius: 20px;
+            background-color: #00aaff;
+            border: none;
+        }
+        .form-group i {
+            position: absolute;
+            margin-left: 10px;
+            margin-top: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card bg-info">
+            <div class="card-body">
+                <h3 class="text-center text-white">REGISTER ACCOUNT</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group position-relative">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" class="form-control pl-5" placeholder="Username...">
+                    </div>
+                    <div class="form-group position-relative">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" class="form-control pl-5" placeholder="Email...">
+                    </div>
+                    <div class="form-group position-relative">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password1" class="form-control pl-5" placeholder="Enter password...">
+                    </div>
+                    <div class="form-group position-relative">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password2" class="form-control pl-5" placeholder="Confirm password...">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" role="button" href="{% url 'login' %}" class="btn btn-primary">Register Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
